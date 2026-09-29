@@ -1,0 +1,257 @@
+#contact {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+    padding: 120px 0;
+    border-top: 1px solid #edf0f2;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    gap: 80px;
+    margin-top: 56px;
+}
+
+/* Introduction */
+
+.contact-introduction {
+    position: relative;
+    max-width: 600px;
+    padding: 32px 0 32px 32px;
+}
+
+.contact-introduction::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 72px;
+    background: #456074;
+    border-radius: 0 0 3px 0;
+}
+
+.contact-introduction::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 32px;
+    width: 42px;
+    height: 1px;
+    background: #d5dde2;
+}
+
+.contact-introduction h3 {
+    margin: 0;
+    color: #111111;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
+}
+
+.contact-introduction p {
+    max-width: 540px;
+    margin: 18px 0 0;
+    color: #56616a;
+    font-size: 1rem;
+    line-height: 1.85;
+}
+
+/* Contact details */
+
+.contact-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #e1e5e8;
+    border-radius: 14px;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* Small accent at the top-right edge */
+.contact-details::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64px;
+    height: 3px;
+    background: #7890a0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 72px;
+    padding: 18px 22px;
+    border-bottom: 1px solid #edf0f2;
+    transition:
+        background 0.2s ease,
+        padding 0.2s ease;
+}
+
+.contact-item:last-child {
+    border-bottom: 0;
+}
+
+.contact-item:hover {
+    background: #f7f8f9;
+    padding-left: 26px;
+}
+
+.contact-label {
+    color: #8a939a;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.contact-item a {
+    position: relative;
+    color: #111111;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: right;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.contact-item a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 1px;
+    background: #456074;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.2s ease;
+}
+
+.contact-item a:hover {
+    color: #456074;
+    transform: translateX(-2px);
+}
+
+.contact-item a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.contact-item a:focus-visible {
+    outline: 3px solid rgba(69, 96, 116, 0.25);
+    outline-offset: 4px;
+    border-radius: 3px;
+}
+
+/* Tablet */
+
+@media (max-width: 800px) {
+    #contact {
+        padding: 90px 0;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        margin-top: 44px;
+    }
+
+    .contact-introduction {
+        max-width: 680px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 560px) {
+    #contact {
+        width: 94%;
+        padding: 72px 0;
+    }
+
+    .contact-content {
+        margin-top: 36px;
+        gap: 38px;
+    }
+
+    .contact-introduction {
+        padding: 26px 0 26px 26px;
+    }
+
+    .contact-introduction::after {
+        left: 26px;
+    }
+
+    .contact-introduction h3 {
+        font-size: 1.45rem;
+    }
+
+    .contact-introduction p {
+        font-size: 0.94rem;
+        line-height: 1.8;
+    }
+
+    .contact-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 7px;
+        min-height: auto;
+        padding: 18px;
+    }
+
+    .contact-item:hover {
+        padding-left: 18px;
+    }
+
+    .contact-item a {
+        text-align: left;
+        font-size: 0.86rem;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-item,
+    .contact-item a,
+    .contact-item a::after {
+        transition: none;
+    }
+}
+/* ========================================
+   SUBTLE SECTION ACCENT
+   ======================================== */
+
+#contact {
+    position: relative;
+}
+
+#contact::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 72px;
+    height: 2px;
+    background: #456074;
+    opacity: 0.65;
+}
+
+@media (max-width: 560px) {
+    #contact::before {
+        width: 52px;
+    }
+}
+
